@@ -56,7 +56,7 @@ $('copyDesmos').addEventListener('click', () => {
   if (!model) return;
   stop();
   const title = `正 ${model.n} 边形 · 第 ${index + 1} 步`;
-  desmosData = desmosClipboard(desmosExpressions(visible(), $('labels').checked), title);
+  desmosData = desmosClipboard(desmosExpressions(model, index, visible(), $('labels').checked), title);
   $('desmosCode').value = desmosData['text/plain'];
   $('desmosDetails').open = false;
   desmosDialog.showModal();
